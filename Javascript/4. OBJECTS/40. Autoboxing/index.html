@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let person = [
+            p1 = {
+                name: "John",
+                age: 30,
+                occupation: "Developer",
+                'type': 'Frontend',
+                address: {
+                    street: "123 Main St",
+                    city: "New York",
+                    state: "NY",
+                    zip: "10001"
+                }
+            },  
+
+            p2 = {
+                name: 'Jane',
+                age: '23',
+                occupation: 'Designer',
+                'type': 'UI/UX',
+                address: {
+                    street: "456 Elm St",
+                    city: "Los Angeles",
+                    state: "CA",
+                    zip: "90001"
+                }
+            },
+
+            p3 = {
+                name: 'Bob',
+                age: '35',
+                occupation: 'Manager',
+                'type': 'Project Manager',
+                address: {  
+                    street: "789 Oak St",
+                    city: "Chicago",
+                    state: "IL",
+                    zip: "60601"
+                }
+            }
+
+        ];
+
+        // console.debug("This is a debug message.");
+        // console.error("This is an error message.");
+        // console.warn("This is a warning message.");
+        // console.info("This is an info message.");
+        console.table(person);
+
+        /*
+            AutoBoxing
+            It is convertion of primitives to object
+        */
+       console.log("This Autoboxing Concept".length);
+       console.log("This Autoboxing Concept".replace("Autoboxing","AutoBoxing"));
+    </script>
+</body>
+</html>

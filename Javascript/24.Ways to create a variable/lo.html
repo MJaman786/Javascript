@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #con {
+            width: 90%;
+            height: 300px;
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px;
+            border-radius: 20px;
+            flex-wrap: wrap;
+        }
+        .box {
+            background-color: white;
+            color: black;
+            height: 80%;
+            width: 20%;
+            margin: 5px;
+            transition: all 0.5s;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .box:hover {
+            width: 30%;
+        }
+        .b1, .b2, .b3, .b4 {
+            text-align: center;
+        }
+        .i {
+            width: 20px;
+            height: 20px;
+            color: white;
+            background-color: black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            #con {
+                flex-direction: column;
+                height: auto;
+            }
+            .box {
+                width: 80%;
+                margin: 10px 0;
+            }
+            .box:hover {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="con">
+        <div class="box b1">
+            <div>BOX-1</div>
+            <div class="i">1</div>
+        </div>
+        <div class="box b2">
+            <div>BOX-2</div>
+            <div class="i">2</div>
+        </div>
+        <div class="box b3">
+            <div>BOX-3</div>
+            <div class="i">3</div>
+        </div>
+        <div class="box b4">
+            <div>BOX-4</div>
+            <div class="i">4</div>
+        </div>
+    </div>
+</body>
+</html>

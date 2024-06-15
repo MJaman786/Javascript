@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <title>Animated Card</title>
+    <style>
+        body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+
+    .card {
+        width: 300px;
+        height: 200px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-content {
+        padding: 20px;
+        text-align: center;
+        background-color: aqua;
+    }
+
+    .description {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.3s, max-height 0.3s;
+    }
+
+    .card:hover .description {
+        opacity: 1;
+        max-height: 100px; /* Adjust as needed to fit the description */
+    }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-content">
+            <h2>Card Title</h2>
+            <p class="description">This is the description that appears when you hover over the card.</p>
+        </div>
+    </div>
+</body>
+</html>

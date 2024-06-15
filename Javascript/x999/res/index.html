@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .nv-bar {
+            width: 100%;
+            background-color: #333;
+        }
+
+        .nv-bar ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+        }
+
+        .nv-bar ul li:first-child {
+            margin-right: auto;
+        }
+
+        .nv-bar li {
+            height: 100%;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nv-bar li a {
+            padding: 10px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .nv-bar li:hover {
+            background-color: darkblue;
+        }
+
+        .nv-bar .menu-icon {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .container {
+            width: 100%;
+            height: calc(100% - 50px); /* Adjust for navbar height */
+            background-color: azure;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: auto;
+            justify-content: space-evenly;
+            flex-direction: row;
+        }
+
+        .item {
+            width: 30%;
+            height: 30%;
+            margin: 3%;
+            flex: 1 1 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 10px;
+        }
+
+        @media (min-width: 1000px) {
+            .item {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .item {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .item {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 400px) and (orientation: portrait) {
+            .item {
+                width: 100%;
+                height: 400px;
+            }
+        }
+
+        /* Responsive navbar styles */
+        @media (max-width: 600px) {
+            .nv-bar ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+            }
+            li:first-child{
+                display: none;
+            }
+            li{
+                width: 100%;
+            }
+            a{
+                width: 100%;
+            }
+            .nv-bar ul.show {
+                display: flex;
+            }
+
+            .nv-bar .menu-icon {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <div class="nv-bar">
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <ul>
+            <li><a href="#">LOGO</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+            <li><a href="#">Link 5</a></li>
+        </ul>
+    </div>
+
+    <!-- Container for items -->
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('.nv-bar ul');
+            nav.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+
+    object tree
+
+    - p1
+       - address
+       - skills
+
+    */
+    let person = [
+      p1 = {                //p1 is object and inside p1 object address is another object
+        name: "John",
+        age: 30,
+        address: {
+          street: "123 Main St",
+          city: "Anytown",
+          state: "CA",
+          zip: "12345"
+        },
+        skills: {
+          programming: ["java", "python"],
+        }
+      },
+
+      p2 = {                //p2 is object and inside p2 object address is another object
+        name: "Jane",
+        age: 25,
+        address: {
+          street: "456 Elm St",
+          city: "Othertown",
+          state: "NY",
+          zip: "67890"
+        },
+        skills: {
+          programming: ["java", "javascript"],
+        }
+      },
+
+      p3 = {
+        // function
+        display: function () {
+          console.log(p2);
+        }
+      }
+    ]
+    // p3.display();
+    console.log(`street : ${person[1].address.street}`
+      + `\ncity : ${person[1].address.city}`
+      + `\nstate : ${person[1].address.state}`
+      + `\nzip : ${person[1].address.zip}`
+    );
+    console.table(person[0].address)
+  </script>
+</body>
+
+</html>

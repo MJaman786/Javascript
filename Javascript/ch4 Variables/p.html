@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+    <style>
+        #add-btn{
+            background-color: #B0EBB4;
+            border: 1px solid black;
+        }
+        #wishlist-btn{
+            background-color: #C4E4FF;
+            border: 1px solid black;
+        }
+        #add1-btn{
+            background-color: #C5FF95;
+            border: 1px solid black;
+        }
+        .bx-list-plus{
+            font-size: 23px;
+            vertical-align: middle;
+            margin-right: 3%;
+        }
+        button{
+            /* vertical-align: middle; */
+            padding: 5px 10px;
+            width: 190px;
+            height: 40px;   
+        }
+    </style>
+</head>
+<body>
+    <button id="add-btn" onclick=" cvalue++; document.querySelector('#cont').
+    innerHTML = `Your current bag contain ${cvalue} Item`">Add Item</button>
+
+    <button id="wishlist-btn" onclick=" cvalue--; document.querySelector('#cont').
+    innerHTML = `Your current bag contain ${cvalue} Item`"><i class='bx bx-list-plus'></i>Add to WishList</button>
+
+    <button id="add1-btn" onclick=" cvalue+=2; document.querySelector('#cont').
+    innerHTML = `Your current bag contain ${cvalue} Item`">Add 1 + 1</button>
+    
+    <h1 id="cont">Your current bag contain 0 Item</h1>
+
+    <script>
+        let cvalue = 0;
+        document.querySelector('#cont').innerHTML=`Your current bag contain ${cvalue} Item `
+    </script>
+</body>
+</html>

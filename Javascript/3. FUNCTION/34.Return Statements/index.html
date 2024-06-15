@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <button onclick="computerChoice('Rock');">Rock</button>
+        <button onclick="computerChoice('Paper')">Paper</button>
+        <button onclick="computerChoice('Seasor')">Seasor</button>
+        <div class="details">
+
+        </div>
+        <div class="info">
+
+        </div>
+    </div>
+
+    <script>
+        function checkWin(user, choice){
+            if((user === 'Rock' && choice === 'Seasor')||
+            (user === 'Paper' && choice === 'Rock')||
+            (user === 'Seasor' && choice === 'Paper'))
+            {
+                document.querySelector('.info').innerText = 'You Win';
+            }
+            else if(user === choice){
+                document.querySelector('.info').innerText = 'It\'s a Tie';
+            }
+            else{
+                document.querySelector('.info').innerText = 'Computer Wins';
+            }
+
+        }
+        function computerChoice(user){
+            let choice = Math.floor(Math.random()*3)+1;
+            if(choice == 3){
+                choice = 'Seasor';
+                document.querySelector('.details').innerText = `Computer Selected ${choice}`
+            }
+            else  if(choice == 2){
+                choice = 'Paper';
+                document.querySelector('.details').innerText = `Computer Selected ${choice}`
+            }
+            else{
+                choice = 'Rock';
+                document.querySelector('.details').innerText = `Computer Selected ${choice}`
+            }
+            checkWin(user, choice);
+        }
+        /*
+        // return value of the function
+        function generateRandom(){
+            let random = Math.random() * 3;
+            return Math.floor(random)+1;
+        }
+        let randomValue = generateRandom();
+        console.log(generateRandom());
+        console.log(generateRandom());
+        console.log(generateRandom());
+        console.log(generateRandom());
+        console.log(generateRandom());
+        
+        // 
+
+        function drivingStatus(){
+            let age = 17;
+            if(age === undefined){
+                return 'You have not defined your age';
+            }
+            else if(age < 18){
+                return 'You Cannot drive';
+            }
+            else {
+                return 'You can drive';
+            }
+        }
+        console.log(drivingStatus());
+        */
+    </script>
+</body>
+</html>

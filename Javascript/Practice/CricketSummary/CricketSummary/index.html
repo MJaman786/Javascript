@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            /* background-color: #f9f9f9; */
+            background-image: url('./image.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-container {
+            max-width: 500px;
+            width: 90%;
+            background-color: white;
+            box-shadow: 0 0 10px;
+            /* padding: 20px;  */
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: normal;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(80px);
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 0 10px;
+        }
+
+        button:hover{
+            transition: all ease-in-out 1;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        pre{
+            padding: 10px;
+            font-size: 1.3rem;
+            font-family:monospace;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(30px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <h1 id="heading">_ Cricket Summary</h1>
+        <div class="container">
+            <button onclick="runfunction(1)">1 Runs</button>
+            <button onclick="runfunction(2)">2 Runs</button>
+            <button onclick="runfunction(3)">3 Runs</button>
+            <button onclick="runfunction(4); countfour();">4 Runs</button>
+            <button onclick="runfunction(6); countsix();">6 Runs</button>
+            <button onclick="outfunction()">out</button>
+            <button onclick="overfunction()">next over</button>
+            <button onclick="reset()">clear</button>
+        </div>
+        <pre id="sum">
+            Batter's Summary:
+        </pre>
+    </div>
+    <script>
+        let name;
+        name = prompt("Batter's name : ");
+        document.getElementById('heading').innerText = `${name}'s Cricket Summary`;
+        let run = 0;
+        let ball = 0;
+        let out = false;
+        let over = 0;
+        let nfour = 0;
+        let nsix = 0;
+        function countfour(){
+            nfour++;
+            display();
+        }
+        function countsix(){
+            nsix++;
+            display();
+        }
+        function runfunction(arg){
+            if(!out){
+                if(ball==6){
+                    over++;
+                    ball=0;
+                    display();
+                }
+                else{
+                    ball++;
+                }
+                run += arg;
+                display();
+            }
+            else{
+                alert(`${name} is out`);
+            }
+        }
+        
+        function outfunction(){
+            out = true;
+            display();
+        }
+
+        function overfunction(){
+            over++;
+            display();
+        }
+
+        function reset(){
+            run = 0;
+            ball = 0;
+            out = false;
+            over = 0;
+            nfour = 0;
+            nsix = 0;
+            display();
+            name = prompt("Batter's name : ");
+            document.getElementById('heading').innerText = `${name}'s Cricket Summary`;
+        }
+
+        function display() {
+            document.getElementById('sum').innerHTML = `Name : ${name}<br>\tRuns : ${run} \tFour : ${nfour} <br>\tBalls : ${ball} \tSix : ${nsix} <br>\tOvers : ${over} \tOut: ${out ? 'Yes' : 'No'} `;
+        }
+
+        display();
+    </script>
+</body>
+
+</html>

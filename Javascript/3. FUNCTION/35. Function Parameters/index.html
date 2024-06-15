@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(parameters1, parameters2){
+            let sum = parameters1 + parameters2;
+            return sum;
+        }
+    //  console.log(add(argument1, argument2));
+        console.log(add(5, 7));
+        console.log(add(10, 27));
+        console.log(add(50, -30));
+        console.log(add(1, 0.1));
+        console.log(`if in case usesr fail to pass parameter 
+            we can set a default value to it`);
+        /*
+            if in case usesr fail to pass parameter 
+            we can set a default value to it
+
+        */
+        function add(parameters1 = 2, parameters2 = 2){
+            let sum = parameters1 + parameters2;
+            return sum;
+        }
+        console.log(add());
+    </script>
+</body>
+</html>

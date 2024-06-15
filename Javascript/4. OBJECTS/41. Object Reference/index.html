@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // primitive reference
+        let a = 5;
+        let b = a;
+        console.log(`a = ${a} , b = ${b}`);
+        a = 10;
+        console.log(`a = ${a} , b = ${b}`);
+
+        console.log(`-=-=-=-=-=-=-=-`)
+        
+        // object reference
+        let c = {a : 4};
+        let d = c;
+        console.log(`c = ${c.a} , d = ${d.a}`);
+
+        c.a = 8;
+        console.log(`c = ${c.a} , d = ${d.a}`);
+
+        /*
+            output:
+            
+            a = 5 , b = 5
+            a = 10 , b = 5
+            -=-=-=-=-=-=-=-
+            c = 4 , d = 4
+            c = 8 , d = 8
+        */
+    </script>
+</body>
+</html>

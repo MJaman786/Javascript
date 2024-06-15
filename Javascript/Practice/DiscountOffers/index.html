@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="head">Discount offer</h2>
+    <script>
+        let age = prompt("Enter your age : ");
+        let gender = prompt("Enter your geneder : ");
+        // let age = 69;
+        // let gender = "female";
+        
+        if(age <= 5){
+            document.getElementById('head').innerHTML=`You can get 100% off`;
+        }
+        else if((age >= 18 && age < 65) && (gender === 'female' || gender === 'male')){
+            document.getElementById('head').innerHTML=`You can get 50% off`;    
+        }
+        else if((age > 5 && age <=8) && (gender === 'female' || gender === 'male')){
+            document.getElementById('head').innerHTML=`You can get 20% off`;
+        }
+        else{
+            document.getElementById('head').innerHTML=`pay only 30%`;
+        }
+    </script>
+</body>
+</html>

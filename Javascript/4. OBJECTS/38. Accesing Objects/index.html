@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Accessing objects
+        */
+       let user = {
+        name : 'John',
+        age : 30,
+        occupation : 'Developer',
+       }
+       console.log(typeof(user));
+       console.log(user);
+       console.log(user.name);
+       console.log(user.age);
+       console.log(user.occupation);
+
+    //     
+
+       let product = [
+            {
+                name : 'Apple',
+                price : 100            
+            },
+            {
+                name : 'Banana',
+                price : 50
+            },
+            {
+                name : 'Orange',
+                price : 150
+            },
+            {
+                name : 'Grapes',
+                price : 200
+            }
+       ]
+    //    delete
+    product.splice(0,2)
+       console.log(product[1]);
+       console.log(product[2]);
+       console.log(product[3]);
+       console.log(product[4]);
+    </script>
+</body>
+</html>

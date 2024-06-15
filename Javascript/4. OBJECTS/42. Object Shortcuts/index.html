@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let product = {
+            name: "Apple Watch",
+            price: 299,
+            description: "A smartwatch that tracks your fitness and health.",
+            displayInfo: function () {
+                console.table(`Name: ${this.name}`
+                    + `\nPrice: $${this.price}`
+                    + `\nDescription: ${this.description}`
+                );
+                // console.table(product);
+            }
+        };
+        // product.displayInfo();
+
+        // 1. Destructing : Extracting properties from objects easily
+        let result = product.name
+        console.log(result);
+
+        let { name, price } = product;
+        console.log(`name : ${name}`
+            + `\nprice: ${price}`
+        );
+
+        // 2. Shorthand Property
+        let age = 20;
+        let person = {
+            pname: 'John',
+            page: age,
+            // shorthand property
+            sayHello() {
+                console.log('Hello');
+            }
+        };
+        let { pname, page } = person;
+        console.log(`pname: ${pname}`
+            + `\nage: ${age}`
+        );
+
+        let person1 = {
+            pname: 'John',
+            age,
+            // shorthand property
+            sayHello() {
+                console.log('Hello');
+            }
+        };
+        let { name1, age1 } = person1;
+        console.log(`pname: ${name1}`
+            + `\nage: ${age1}`
+        );
+    </script>
+</body>
+
+</html>

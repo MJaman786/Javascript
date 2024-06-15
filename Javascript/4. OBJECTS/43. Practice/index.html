@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. Create an object to represent a product from myntra
+        let product1 = {
+            name: 'Adidas T-shirt',
+            price: 999,
+            brand: 'Adidas',
+            rating: 4.5,
+            company: 'myntra',
+            display: function () {
+                console.log(`\nMyntra product detail :`
+                    + `\nname : ${this.name}`
+                    + `\nprice : ${this.price}`
+                    + `\nbrand : ${this.brand}`
+                    + `\nrating : ${this.rating}\n\n`
+                );
+            }
+        };
+        let product2 = {
+            name: 'Adidas T-shirt',
+            price: 999,
+            brand: 'Adidas',
+            rating: 4.5,
+            company: 'myntra',
+            display: function () {
+                console.log(`\nMyntra product detail :`
+                    + `\nname : ${this.name}`
+                    + `\nprice : ${this.price}`
+                    + `\nbrand : ${this.brand}`
+                    + `\nrating : ${this.rating}\n\n`
+                );
+            }
+        };
+        let product3 = {
+            name: 'Nike T-shirt',
+            price: 999,
+            brand: 'Adidas',
+            rating: 4.5,
+            company: 'myntra',
+            display: function () {
+                console.log(`\nMyntra product detail :`
+                    + `\nname : ${this.name}`
+                    + `\nprice : ${this.price}`
+                    + `\nbrand : ${this.brand}`
+                    + `\nrating : ${this.rating}\n\n`
+                );
+            }
+        };
+        // product.display();
+
+        // 2. 
+        // let obj = product;
+        // console.table(product);
+        // obj.name = 'Nike';
+        // console.table(product);
+        // obj.company = 'amazon';
+        // console.table(product);
+
+        // 3.
+            // console.log(product.)
+        // 4.
+        // 5. function
+
+        function isIdentical(product1, product2){
+            if(typeof product1 !== "object" || typeof product2 !== "object"){
+                console.warn("This is not an object")
+                return false;
+            }
+            if(product1 == product2){
+                console.log("This are equal")
+                return true
+            }
+            if(product1.name == product2.name
+            && product1.price == product2.price
+            && product1.brand == product2.brand
+            && product1.company == product2.company){
+                console.log("This are equal")
+                return true
+            }else{
+                console.log("This are not equal")
+                return false
+            }
+        }
+        console.log(isIdentical(product1, product2));
+        console.log(isIdentical(product1, product3));
+        // console.log(isIdentical(product1, 'product2'));
+    </script>
+</body>
+
+</html>

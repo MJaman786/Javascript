@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aquamarine;
+        }
+        .container{
+            max-width: 400px;
+            width: 90%;
+            /* border: 1px solid black; */
+            padding: 3%;
+            border-radius: 25px;
+            box-shadow: 0 0 10px;
+            background-color: aqua;
+            /* border: none; */
+        }
+        .display{
+            font-size: 24px;
+            width: 100%;
+            padding: 7%;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 0 10px;
+            outline: none;
+        }
+        .btn-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 15px;
+            padding: 3%;
+            margin-top: 3%;
+            flex: 1 1 auto;
+        }
+        button{
+            padding: 20px 25px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 0 10px;
+            font-size: 1rem;
+            /* width: 5%; */
+            background-color: #7dd87d;
+        }
+
+        button:hover{
+            background-color: #5be7a9;
+        }
+
+        .btn{
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" name="" class="display">
+        <div class="btn-container">
+            <button onclick="addToDisplay('(');">(</button>
+            <button onclick="addToDisplay(')');">)</button>
+            <button onclick="addToDisplay('%');">%</button>
+            <button onclick="clearPrevious();">C</button>
+            <button onclick="addToDisplay('/');">/</button>
+            <button onclick="addToDisplay('7');">7</button>
+            <button onclick="addToDisplay('8');">8</button>
+            <button onclick="addToDisplay('9');">9</button>
+            <button onclick="addToDisplay('*');">x</button>
+            <button onclick="addToDisplay('4');">4</button>
+            <button onclick="addToDisplay('5');">5</button>  
+            <button onclick="addToDisplay('6');">6</button>  
+            <button onclick="addToDisplay('+');">+</button>  
+            <button onclick="addToDisplay('1');">1</button>
+            <button onclick="addToDisplay('2');">2</button>
+            <button onclick="addToDisplay('3');">3</button>
+            <button onclick="addToDisplay('-');">−</button>
+            <button onclick="addToDisplay('.');">.</button>
+            <button onclick="addToDisplay('0');">0</button>
+            <button onclick="Calculate('=');">=</button>
+            <button onclick="clearDisplay('');" class="btn">AC</button>
+        </div>
+    </div>
+    <script>
+        let displayValue = '';
+        document.querySelector('.display').value=displayValue;
+
+        function addToDisplay(value){
+            displayValue += value;
+            document.querySelector('.display').value = displayValue;
+        }
+
+        function clearDisplay(){
+            displayValue = '';
+            document.querySelector('.display').value = displayValue;
+        }
+
+        function clearPrevious(){
+            displayValue = displayValue.slice(0,-1);
+            document.querySelector('.display').value = displayValue;
+        }
+
+        function Calculate(){
+            let result = eval(displayValue);
+            displayValue = result;
+            document.querySelector('.display').value = result;
+        }
+    </script>
+</body>
+</html>
